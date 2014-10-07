@@ -22,9 +22,10 @@ public class SubjectServices implements SubjectServicesRemote, SubjectServicesLo
     }
 
 	@Override
-	public void createSubject(Subject subject) {
+	public Subject createSubject(Subject subject) {
 
 		em.persist(subject);
+		return subject;
 	}
 
 	@Override
@@ -33,32 +34,25 @@ public class SubjectServices implements SubjectServicesRemote, SubjectServicesLo
 	}
 
 	@Override
-	public void updateSubject(Subject subject) {
+	public Subject updateSubject(Subject subject) {
 
 		 em.merge(subject);
+		 return subject;
 	}
 
 	@Override
-	public void removeSubject(Subject subject) {
+	public Subject removeSubject(Subject subject) {
 
 		 em.remove(em.merge(subject));
+		 return subject;
 	}
 
-	@Override
-	public void remove_Subject(int id) {
-		em.remove(em.find(Subject.class, id));		
-		
-	}
 
 	@Override
 	public List<Subject> findAllSubject() {
 		return em.createQuery("select s from Subject s  ",Subject.class).getResultList();
 	}
 	
-public List<Subject> findSubjectByForum(Forum forum) {
-		
-		return (List<Subject>) em.createQuery("select s from Subject s where s.forum=:x",Subject.class).setParameter("x", forum);
 
-	}
 
 }

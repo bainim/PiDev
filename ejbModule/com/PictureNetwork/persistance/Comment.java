@@ -21,7 +21,7 @@ public class Comment implements Serializable {
 	
 
 	private int idcomment;
-	private Date datecomment;
+	private String datecomment;
 	private String comm;
 
 	private User user;
@@ -47,11 +47,11 @@ public class Comment implements Serializable {
 		this.idcomment = idcomment;
 	}
 
-	public Date getDatecomment() {
+	public String getDatecomment() {
 		return datecomment;
 	}
 
-	public void setDatecomment(Date datecomment) {
+	public void setDatecomment(String datecomment) {
 		this.datecomment = datecomment;
 	}
 
@@ -76,11 +76,11 @@ public class Comment implements Serializable {
 
 	}
 	
-public Comment(Date datecomment, String comm, User user, Subject subject) {
+public Comment(String datecomment, String comm, Subject subject) {
 		
 		this.datecomment = datecomment;
 		this.comm = comm;
-		this.user = user;
+		
 		this.subject = subject;
 	}
 	

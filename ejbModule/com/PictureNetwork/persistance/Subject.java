@@ -24,9 +24,9 @@ public class Subject implements Serializable {
 
 	private int idsubject;
 	private String title;
-	private Date date;
+	private String date;
 
-	private Forum forum;
+	
 	private List<Comment> comment;
 
 	
@@ -39,15 +39,7 @@ public class Subject implements Serializable {
 		this.comment = comment;
 	}
 
-	@ManyToOne
-	@JoinColumn(name = "forumsubject_fk")
-	public Forum getForum() {
-		return forum;
-	}
-
-	public void setForum(Forum forum) {
-		this.forum = forum;
-	}
+	
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -67,11 +59,11 @@ public class Subject implements Serializable {
 		this.title = title;
 	}
 
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 
@@ -79,12 +71,12 @@ public class Subject implements Serializable {
 
 	}
 	
-	public Subject(String title, Date date, Forum forum, List<Comment> comment) {
+	public Subject(String title, String date) {
 		
 		this.title = title;
 		this.date = date;
-		this.forum = forum;
-		this.comment = comment;
+		
+		
 	}
 	
 

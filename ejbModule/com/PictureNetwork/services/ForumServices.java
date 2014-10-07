@@ -1,38 +1,36 @@
 package com.PictureNetwork.services;
 
 import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 import com.PictureNetwork.persistance.Forum;
 
-/**
- * Session Bean implementation class ForumServices
- */
+
 @Stateless
 public class ForumServices implements ForumServicesRemote, ForumServicesLocal {
 
-    /**
-     * Default constructor. 
-     */
+	@PersistenceContext( unitName ="PictureNetwork")
+	 private EntityManager em;
     public ForumServices() {
-        // TODO Auto-generated constructor stub
     }
 
 	@Override
-	public void createForum(Forum forum) {
-		// TODO Auto-generated method stub
-		
+	public Forum createForum(Forum forum) {
+		em.persist(forum);
+		return forum;
 	}
 
 	@Override
-	public void updateForum(Forum forum) {
-		// TODO Auto-generated method stub
-		
+	public Forum updateForum(Forum forum) {
+		 em.merge(forum);
+		 return forum;
 	}
 
 	@Override
-	public void removeForum(Forum forum) {
-		// TODO Auto-generated method stub
-		
+	public Forum removeForum(Forum forum) {
+		em.remove(em.merge(forum));
+		 return forum;
 	}
 
 }

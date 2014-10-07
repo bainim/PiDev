@@ -19,16 +19,9 @@ public class Forum implements Serializable {
 	private int idforum;
 	private String title;
 
-	private List<Subject> subject;
+	
 
-	@OneToMany(mappedBy = "forum")
-	public List<Subject> getSubject() {
-		return subject;
-	}
-
-	public void setSubject(List<Subject> subject) {
-		this.subject = subject;
-	}
+	
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -52,10 +45,10 @@ public class Forum implements Serializable {
 
 	}
 
-	public Forum(String title, List<Subject> subject) {
+	public Forum(String title) {
 
 		this.title = title;
-		this.subject = subject;
+		
 	}
 
 }

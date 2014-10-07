@@ -6,16 +6,18 @@ import javax.ejb.Remote;
 
 import com.PictureNetwork.persistance.Comment;
 import com.PictureNetwork.persistance.Subject;
+import com.PictureNetwork.persistance.User;
 
 @Remote
 public interface CommentServicesRemote {
 	
-	void createComment(Comment comment);
+	Comment createComment(Comment comment);
 	Comment findCommentById(int id);
-	void updateComment(Comment comment);
-	void removeComment(Comment comment);
-	void remove_Comment(int id);
+	Comment updateComment(Comment comment);
+	Comment removeComment(Comment comment);
+	
 	List<Comment> findAllComment();
 
 	List<Comment> findCommentBySubject(Subject subject);
+	List<Comment> findCommentByUser(User user);
 }

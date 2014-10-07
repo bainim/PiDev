@@ -8,6 +8,7 @@ import javax.persistence.PersistenceContext;
 
 import com.PictureNetwork.persistance.Comment;
 import com.PictureNetwork.persistance.Subject;
+import com.PictureNetwork.persistance.User;
 
 /**
  * Session Bean implementation class CommentServices
@@ -23,8 +24,9 @@ public class CommentServices implements CommentServicesRemote, CommentServicesLo
     }
 
 	@Override
-	public void createComment(Comment comment) {
+	public Comment createComment(Comment comment) {
 		em.persist(comment);
+		return comment;
 		
 	}
 
@@ -34,21 +36,21 @@ public class CommentServices implements CommentServicesRemote, CommentServicesLo
 	}
 
 	@Override
-	public void updateComment(Comment comment) {
+	public Comment updateComment(Comment comment) {
 
 		 em.merge(comment);
+		 return comment;
 	}
 
 	@Override
-	public void removeComment(Comment comment) {
+	public Comment removeComment(Comment comment) {
 
 		 em.remove(em.merge(comment));
+		 return comment;
+		 
 	}
 
-	@Override
-	public void remove_Comment(int id) {
-		em.remove(em.find(Comment.class, id));		
-	}
+	
 
 	@Override
 	public List<Comment> findAllComment() {
@@ -59,5 +61,11 @@ public class CommentServices implements CommentServicesRemote, CommentServicesLo
 		
 		return (List<Comment>) em.createQuery("select c from Comment c where c.subject=:x",Comment.class).setParameter("x", subject);
 
+	}
+
+	@Override
+	public List<Comment> findCommentByUser(User user) {
+		
+		return (List<Comment>) em.createQuery("select c from Comment c where c.user=:x",Comment.class).setParameter("x", user);
 	}
 }

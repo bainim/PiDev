@@ -30,7 +30,7 @@ public class Photo implements Serializable {
 	private byte[] picbyte;
 	//private Image picture;
 	private String desc;
-	private Date date;
+	private String date;
 	private int price;
 	private Character selled;
 
@@ -82,11 +82,11 @@ public class Photo implements Serializable {
 		this.desc = desc;
 	}
 
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 
@@ -110,7 +110,7 @@ public class Photo implements Serializable {
 
 	}
 	
-	public Photo(byte[] picbyte,/* Image picture,*/ String desc, Date date,
+	public Photo(byte[] picbyte,/* Image picture,*/ String desc, String date,
 			int price, Character selled, User user) {
 		
 		this.picbyte = picbyte;

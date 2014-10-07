@@ -11,13 +11,13 @@ import com.PictureNetwork.persistance.Subject;
 @Remote
 public interface SubjectServicesRemote {
 	
-	void createSubject(Subject subject);
+	Subject createSubject(Subject subject);
 	Subject findSubjectById(int id);
-	void updateSubject(Subject subject);
-	void removeSubject(Subject subject);
-	void remove_Subject(int id);
+	Subject updateSubject(Subject subject);
+	Subject removeSubject(Subject subject);
+	
 	List<Subject> findAllSubject();
 	
-	List<Subject> findSubjectByForum(Forum forum);
+	
 
 }

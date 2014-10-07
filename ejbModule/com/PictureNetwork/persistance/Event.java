@@ -17,7 +17,7 @@ public class Event implements Serializable {
 	
 
 	private int idevent;
-	private Date dateEvent;
+	private String dateEvent;
 	private String Local;
 	private String desc;
 
@@ -35,11 +35,11 @@ public class Event implements Serializable {
 		this.idevent = idevent;
 	}
 
-	public Date getDateEvent() {
+	public String getDateEvent() {
 		return dateEvent;
 	}
 
-	public void setDateEvent(Date dateEvent) {
+	public void setDateEvent(String dateEvent) {
 		this.dateEvent = dateEvent;
 	}
 
@@ -60,7 +60,7 @@ public class Event implements Serializable {
 		this.desc = desc;
 	}
 	
-	public Event(Date dateEvent, String local, String desc) {
+	public Event(String dateEvent, String local, String desc) {
 		
 		this.dateEvent = dateEvent;
 		Local = local;
