@@ -7,7 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -25,6 +27,8 @@ public class Event implements Serializable {
 	private String dateEvent;
 	private String Local;
 	private String description;
+	
+	private User user;
 
 	public Event() {
 
@@ -63,6 +67,16 @@ public class Event implements Serializable {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	@ManyToOne
+	@JoinColumn(name = "userevent_fk")
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 }

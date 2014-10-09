@@ -33,6 +33,8 @@ public class User implements Serializable {
 
 	private List<Photo> photo;
 	
+	private List<Event> events;
+	
 	
 
 	@OneToMany(mappedBy = "user")
@@ -160,5 +162,14 @@ public class User implements Serializable {
 		this.country = country;
 		this.address = address;
 		this.type = type;
+	}
+
+	@OneToMany(mappedBy = "user")
+	public List<Event> getEvents() {
+		return events;
+	}
+
+	public void setEvents(List<Event> events) {
+		this.events = events;
 	}
 }
