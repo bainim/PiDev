@@ -3,18 +3,19 @@ package com.PictureNetwork.services;
 import java.util.List;
 
 import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
+import com.PictureNetwork.persistance.Subject;
 import com.PictureNetwork.persistance.User;
 
-/**
- * Session Bean implementation class UserServices
- */
+
 @Stateless
 public class UserServices implements UserServicesRemote, UserServicesLocal {
 
-    /**
-     * Default constructor. 
-     */
+	@PersistenceContext(unitName = "PictureNetwork")
+	private EntityManager em;
+	
     public UserServices() {
         // TODO Auto-generated constructor stub
     }
@@ -22,8 +23,7 @@ public class UserServices implements UserServicesRemote, UserServicesLocal {
 	
 	@Override
 	public User findUserById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return em.find(User.class, id);
 	}
 
 	@Override

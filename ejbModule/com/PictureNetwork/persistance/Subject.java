@@ -20,16 +20,12 @@ import javax.persistence.TemporalType;
 @Table(name = "t_subject")
 public class Subject implements Serializable {
 
-	
-
 	private int idsubject;
 	private String title;
 	private String date;
 
-	
 	private List<Comment> comment;
 
-	
 	@OneToMany(mappedBy = "subject")
 	public List<Comment> getComment() {
 		return comment;
@@ -38,8 +34,6 @@ public class Subject implements Serializable {
 	public void setComment(List<Comment> comment) {
 		this.comment = comment;
 	}
-
-	
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -70,14 +64,11 @@ public class Subject implements Serializable {
 	public Subject() {
 
 	}
-	
+
 	public Subject(String title, String date) {
-		
 		this.title = title;
 		this.date = date;
-		
-		
+
 	}
-	
 
 }

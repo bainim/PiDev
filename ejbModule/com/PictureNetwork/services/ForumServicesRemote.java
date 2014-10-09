@@ -10,4 +10,5 @@ public interface ForumServicesRemote {
 	Forum createForum(Forum forum);
 	Forum updateForum(Forum forum);
 	Forum removeForum(Forum forum);
+	
 }

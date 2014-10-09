@@ -10,24 +10,22 @@ import com.PictureNetwork.persistance.Comment;
 import com.PictureNetwork.persistance.Subject;
 import com.PictureNetwork.persistance.User;
 
-/**
- * Session Bean implementation class CommentServices
- */
 @Stateless
-public class CommentServices implements CommentServicesRemote, CommentServicesLocal {
+public class CommentServices implements CommentServicesRemote,
+		CommentServicesLocal {
 
-	@PersistenceContext( unitName ="PictureNetwork")
-	 private EntityManager em;
-	
-    public CommentServices() {
-    	
-    }
+	@PersistenceContext(unitName = "PictureNetwork")
+	private EntityManager em;
+
+	public CommentServices() {
+
+	}
 
 	@Override
 	public Comment createComment(Comment comment) {
 		em.persist(comment);
 		return comment;
-		
+
 	}
 
 	@Override
@@ -38,34 +36,38 @@ public class CommentServices implements CommentServicesRemote, CommentServicesLo
 	@Override
 	public Comment updateComment(Comment comment) {
 
-		 em.merge(comment);
-		 return comment;
+		em.merge(comment);
+		return comment;
 	}
 
 	@Override
 	public Comment removeComment(Comment comment) {
 
-		 em.remove(em.merge(comment));
-		 return comment;
-		 
-	}
+		em.remove(em.merge(comment));
+		return comment;
 
-	
+	}
 
 	@Override
 	public List<Comment> findAllComment() {
-		return em.createQuery("select c from Comment c  ",Comment.class).getResultList();
+		return em.createQuery("select c from Comment c  ", Comment.class)
+				.getResultList();
 	}
-	
+
 	public List<Comment> findCommentBySubject(Subject subject) {
-		
-		return (List<Comment>) em.createQuery("select c from Comment c where c.subject=:x",Comment.class).setParameter("x", subject);
+
+		return (List<Comment>) em
+				.createQuery("select c from Comment c where c.subject=:x",
+						Comment.class).setParameter("x", subject)
+				.getResultList();
 
 	}
 
 	@Override
 	public List<Comment> findCommentByUser(User user) {
-		
-		return (List<Comment>) em.createQuery("select c from Comment c where c.user=:x",Comment.class).setParameter("x", user);
+
+		return (List<Comment>) em.createQuery(
+				"select c from Comment c where c.user=:x", Comment.class)
+				.setParameter("x", user);
 	}
 }

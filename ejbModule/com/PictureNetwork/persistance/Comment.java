@@ -64,6 +64,8 @@ public class Comment implements Serializable {
 		this.comm = comm;
 	}
 
+	@ManyToOne
+	@JoinColumn(name = "usercomment_fk")
 	public User getUser() {
 		return user;
 	}
@@ -76,12 +78,12 @@ public class Comment implements Serializable {
 
 	}
 	
-public Comment(String datecomment, String comm, Subject subject) {
+public Comment(String datecomment, String comm) {
 		
 		this.datecomment = datecomment;
 		this.comm = comm;
 		
-		this.subject = subject;
+		
 	}
 	
 

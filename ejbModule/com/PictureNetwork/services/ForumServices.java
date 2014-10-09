@@ -4,6 +4,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import com.PictureNetwork.persistance.Comment;
 import com.PictureNetwork.persistance.Forum;
 
 
@@ -32,5 +33,7 @@ public class ForumServices implements ForumServicesRemote, ForumServicesLocal {
 		em.remove(em.merge(forum));
 		 return forum;
 	}
+
+	
 
 }

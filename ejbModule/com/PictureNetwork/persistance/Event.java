@@ -14,12 +14,17 @@ import javax.persistence.Table;
 @Table(name = "t_event")
 public class Event implements Serializable {
 
-	
+	public Event(String dateEvent, String local, String description) {
+		super();
+		this.dateEvent = dateEvent;
+		Local = local;
+		this.description = description;
+	}
 
 	private int idevent;
 	private String dateEvent;
 	private String Local;
-	private String desc;
+	private String description;
 
 	public Event() {
 
@@ -52,20 +57,12 @@ public class Event implements Serializable {
 	}
 
 	@Lob
-	public String getDesc() {
-		return desc;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setDesc(String desc) {
-		this.desc = desc;
+	public void setDescription(String description) {
+		this.description = description;
 	}
-	
-	public Event(String dateEvent, String local, String desc) {
-		
-		this.dateEvent = dateEvent;
-		Local = local;
-		this.desc = desc;
-	}
-	
 
 }

@@ -20,4 +20,5 @@ public interface CommentServicesRemote {
 
 	List<Comment> findCommentBySubject(Subject subject);
 	List<Comment> findCommentByUser(User user);
+
 }

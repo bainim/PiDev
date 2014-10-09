@@ -19,10 +19,6 @@ public class Forum implements Serializable {
 	private int idforum;
 	private String title;
 
-	
-
-	
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public int getIdforum() {
@@ -48,7 +44,7 @@ public class Forum implements Serializable {
 	public Forum(String title) {
 
 		this.title = title;
-		
+
 	}
 
 }

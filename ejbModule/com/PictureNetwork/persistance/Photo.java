@@ -1,9 +1,6 @@
 package com.PictureNetwork.persistance;
 
-import java.awt.Image;
 import java.io.Serializable;
-import java.util.Arrays;
-import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,12 +10,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-
-import com.sun.mail.handlers.image_jpeg;
-
-import oracle.jrockit.jfr.parser.ChunkParser;
 
 @Entity
 @Table(name = "t_photo")
@@ -28,14 +19,19 @@ public class Photo implements Serializable {
 
 	private int idphoto;
 	private byte[] picbyte;
-	//private Image picture;
-	private String desc;
 	private String date;
+	private String description;
 	private int price;
-	private Character selled;
-
+	private boolean selled;
 	private User user;
 
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	public int getIdphoto() {
+		return idphoto;
+	}
+	
 	@ManyToOne
 	@JoinColumn(name = "userphoto_fk")
 	public User getUser() {
@@ -46,11 +42,7 @@ public class Photo implements Serializable {
 		this.user = user;
 	}
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	public int getIdphoto() {
-		return idphoto;
-	}
+	
 
 	public void setIdphoto(int idphoto) {
 		this.idphoto = idphoto;
@@ -73,15 +65,6 @@ public class Photo implements Serializable {
 		this.picture = picture;
 	}*/
 
-	@Lob
-	public String getDesc() {
-		return desc;
-	}
-
-	public void setDesc(String desc) {
-		this.desc = desc;
-	}
-
 	public String getDate() {
 		return date;
 	}
@@ -98,28 +81,34 @@ public class Photo implements Serializable {
 		this.price = price;
 	}
 
-	public Character getSelled() {
-		return selled;
-	}
-
-	public void setSelled(Character selled) {
-		this.selled = selled;
-	}
-
 	public Photo() {
 
 	}
 	
 	public Photo(byte[] picbyte,/* Image picture,*/ String desc, String date,
-			int price, Character selled, User user) {
+			int price, Character selled) {
 		
 		this.picbyte = picbyte;
 		//this.picture = picture;
-		this.desc = desc;
 		this.date = date;
 		this.price = price;
+		
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public boolean isSelled() {
+		return selled;
+	}
+
+	public void setSelled(boolean selled) {
 		this.selled = selled;
-		this.user = user;
 	}
 	
 
