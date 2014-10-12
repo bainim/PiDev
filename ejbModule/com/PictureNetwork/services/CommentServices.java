@@ -70,4 +70,12 @@ public class CommentServices implements CommentServicesRemote,
 				"select c from Comment c where c.user=:x", Comment.class)
 				.setParameter("x", user);
 	}
+
+	@Override
+	public List<Comment> findCommentBySubject(int idsubject) {
+		return
+				(List<Comment>) em.createQuery(
+						"select c from Comment c where c.idsubject=:x", Comment.class)
+						.setParameter("x", idsubject );
+	}
 }

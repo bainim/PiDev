@@ -12,6 +12,7 @@ import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name = "t_event")
 public class Event implements Serializable {
@@ -31,7 +32,6 @@ public class Event implements Serializable {
 	private User user;
 
 	public Event() {
-
 	}
 
 	@Id
@@ -77,6 +77,12 @@ public class Event implements Serializable {
 
 	public void setUser(User user) {
 		this.user = user;
+	}
+
+	@Override
+	public String toString() {
+		return "Event [dateEvent=" + dateEvent + ", Local=" + Local
+				+ ", description=" + description + ", user=" + user + "]";
 	}
 
 }

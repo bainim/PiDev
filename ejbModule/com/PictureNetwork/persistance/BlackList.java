@@ -12,6 +12,9 @@ import javax.persistence.Table;
 @Table(name = "t_blacklist")
 public class BlackList implements Serializable {
 
+
+	private static final long serialVersionUID = 1L;
+
 	private int idword;
 	private String word;
 
@@ -40,6 +43,11 @@ public class BlackList implements Serializable {
 	public BlackList(String word) {
 
 		this.word = word;
+	}
+
+	@Override
+	public String toString() {
+		return "BlackList [word=" + word + "]";
 	}
 	
 	

@@ -3,56 +3,44 @@ package com.PictureNetwork.services;
 import java.util.List;
 
 import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
+import com.PictureNetwork.persistance.BlackList;
 import com.PictureNetwork.persistance.Event;
 
-/**
- * Session Bean implementation class EventServices
- */
 @Stateless
 public class EventServices implements EventServicesRemote, EventServicesLocal {
+	
+	@PersistenceContext( unitName ="PictureNetwork")
+	 private EntityManager em;
 
-    /**
-     * Default constructor. 
-     */
     public EventServices() {
-        // TODO Auto-generated constructor stub
+    	
     }
 
-	@Override
 	public void createEvent(Event event) {
-		// TODO Auto-generated method stub
-		
+		em.persist(event);
 	}
 
-	@Override
 	public Event findEventById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return em.find(Event.class, id);
 	}
 
-	@Override
 	public void updateEvent(Event event) {
-		// TODO Auto-generated method stub
-		
+		em.merge(event);	
 	}
-
-	@Override
+	
 	public void removeEvent(Event event) {
-		// TODO Auto-generated method stub
-		
+		em.remove(em.find(Event.class, event));	
+	}
+	
+	public void remove_Event(int id) {	
+		em.remove(em.find(Event.class, id));
 	}
 
-	@Override
-	public void remove_Player(int id) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public List<Event> findAllPlayer() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Event> findAllEvent() {
+		return em.createQuery("select w from Event w", Event.class).getResultList();
 	}
 
 }

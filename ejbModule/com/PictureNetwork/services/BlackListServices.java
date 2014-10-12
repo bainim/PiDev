@@ -1,6 +1,6 @@
 package com.PictureNetwork.services;
 
-import javax.ejb.LocalBean;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -16,25 +16,50 @@ public class BlackListServices implements BlackListServicesRemote, BlackListServ
 
 	@PersistenceContext( unitName ="PictureNetwork")
 	 private EntityManager em;
+
+	
     public BlackListServices() {
-        // TODO Auto-generated constructor stub
     }
-
-	@Override
-	public void createBlackList(BlackList blacklist) {
-		
+    
+    
+	public void addBlackList(BlackList blacklist) {
+		em.persist(blacklist);
 	}
-
-	@Override
+	
 	public void updateBlackList(BlackList blacklist) {
-
-		
+		em.merge(blacklist);
+		//BlackList managedBlackList =  em.merge(blacklist);
+	}
+	
+	public void removeBlackList(int idword) {
+		em.remove(em.find(BlackList.class, idword));
+	}
+	
+	
+	
+	
+	public List<BlackList> findAll() {
+		return em.createQuery("select w from BlackList w", BlackList.class).getResultList();
+	}
+	
+	public BlackList findBlackListById(int idword) {
+		return em.find(BlackList.class, idword);
 	}
 
-	@Override
-	public void removeBlackList(BlackList blacklist) {
-		// TODO Auto-generated method stub
-		
-	}
+
+	
+	
 
 }
+
+
+
+
+
+
+
+
+
+
+
+

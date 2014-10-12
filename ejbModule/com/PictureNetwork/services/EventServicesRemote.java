@@ -13,6 +13,6 @@ public interface EventServicesRemote {
 	Event findEventById(int id);
 	void updateEvent(Event event);
 	void removeEvent(Event event);
-	void remove_Player(int id);
-	List<Event> findAllPlayer();
+	void remove_Event(int id);
+	List<Event> findAllEvent();
 }
