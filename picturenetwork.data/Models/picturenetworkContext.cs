@@ -1,6 +1,7 @@
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using picturenetwork.data.Models.Mapping;
+using picturenetwork.domain;
 
 namespace picturenetwork.data.Models
 {

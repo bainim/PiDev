@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
+using picturenetwork.domain;
 
 namespace picturenetwork.data.Models.Mapping
 {

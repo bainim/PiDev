@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace picturenetwork.data.Models
+namespace picturenetwork.domain
 {
     public partial class t_claims
     {
