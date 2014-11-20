@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace picturenetwork.data.Infrasricture
 {
-    interface IUnitOfWork : IDisposable
+   public interface IUnitOfWork : IDisposable
     {
         void Commit();
 

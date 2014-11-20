@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.Owin;
+﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartup(typeof(picturenetwork.web.Startup))]
-
+[assembly: OwinStartupAttribute(typeof(picturenetwork.web.Startup))]
 namespace picturenetwork.web
 {
     public partial class Startup

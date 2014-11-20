@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "picturenetwork.domain", "pi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "picturenetwork.services", "picturenetwork.services\picturenetwork.services.csproj", "{10583589-77A1-41DD-8DD8-C527D3347915}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "picturenetwork.web", "picturenetwork.web\picturenetwork.web.csproj", "{55EEF734-8E83-4C50-A74C-B4C0B37EDA5F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "picturenetwork.web", "picturenetwork.web\picturenetwork.web.csproj", "{1A7A1F74-C009-44B5-BA39-2536DBD9513D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{10583589-77A1-41DD-8DD8-C527D3347915}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10583589-77A1-41DD-8DD8-C527D3347915}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10583589-77A1-41DD-8DD8-C527D3347915}.Release|Any CPU.Build.0 = Release|Any CPU
-		{55EEF734-8E83-4C50-A74C-B4C0B37EDA5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{55EEF734-8E83-4C50-A74C-B4C0B37EDA5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{55EEF734-8E83-4C50-A74C-B4C0B37EDA5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{55EEF734-8E83-4C50-A74C-B4C0B37EDA5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A7A1F74-C009-44B5-BA39-2536DBD9513D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A7A1F74-C009-44B5-BA39-2536DBD9513D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A7A1F74-C009-44B5-BA39-2536DBD9513D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A7A1F74-C009-44B5-BA39-2536DBD9513D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

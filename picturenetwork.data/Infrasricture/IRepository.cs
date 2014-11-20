@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace picturenetwork.data.Infrasricture
 {
-    interface IRepository<P> where P : class
+    public interface IRepository<P> where P : class
     {
         void Add(P entity);
         void Update(P entity);

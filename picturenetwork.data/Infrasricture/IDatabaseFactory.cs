@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace picturenetwork.data.Infrasricture
 {
-    interface IDatabaseFactory : IDisposable
+    public interface IDatabaseFactory : IDisposable
     {
         picturenetworkContext DataContext { get; }
     }

@@ -9,7 +9,8 @@ namespace picturenetwork.services
 {
     interface IForumService : IDisposable
     {
-      
+
+        void CreateSubject(t_subject s);
         IEnumerable<t_subject> GetSubjects();
         t_subject GetSubject(int idsubject);
         void CreateComment(t_comment c);

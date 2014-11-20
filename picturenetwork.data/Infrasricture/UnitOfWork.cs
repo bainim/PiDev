@@ -34,7 +34,7 @@ namespace picturenetwork.data.Infrasricture
         }
 
         private ICommentRepository commentRepository;
-        public ICommentRepository ProviderRepository
+        public ICommentRepository CommentRepository
         {
             get { return commentRepository = new CommentRepository(dbFactory); }
         }

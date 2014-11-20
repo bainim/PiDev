@@ -18,6 +18,12 @@ namespace picturenetwork.services
             dbFactory = new DatabaseFactory();
             utOfWork = new UnitOfWork(dbFactory);
         }
+
+        public void CreateSubject(domain.t_subject s)
+        {
+            utOfWork.SubjectRepository.Add(s);
+            utOfWork.Commit();
+        }
         public IEnumerable<domain.t_subject> GetSubjects()
         {
             return utOfWork.SubjectRepository.GetAll();

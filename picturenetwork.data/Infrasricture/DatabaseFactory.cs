@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace picturenetwork.data.Infrasricture
 {
-   public class DatabaseFactory
+   public class DatabaseFactory : Disposable, IDatabaseFactory
     {
         private picturenetworkContext dataContext;
         public picturenetworkContext DataContext
