@@ -12,6 +12,9 @@ namespace picturenetwork.data.Infrasricture
 
         ISubjectRepository SubjectRepository { get; }
         ICommentRepository CommentRepository { get; }
+        IPhotoRepository PhotoRepository { get; }
+        IClaimRepository ClaimRepository { get; }
+        IEventRepository EventRepository { get; }
       
     }
 }

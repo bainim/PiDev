@@ -1,14 +1,19 @@
 namespace picturenetwork.data.Migrations
 {
+    using MySql.Data.Entity;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
+    using System.Data.Entity.Migrations.Model;
+    using System.Data.Entity.Migrations.Sql;
     using System.Linq;
 
     internal sealed class Configuration : DbMigrationsConfiguration<picturenetwork.data.Models.picturenetworkContext>
     {
         public Configuration()
         {
+            SetSqlGenerator("MySql.Data.MySqlClient", new MyOwnMySqlMigrationSqlGenerator());
+
             AutomaticMigrationsEnabled = false;
         }
 
@@ -26,6 +31,16 @@ namespace picturenetwork.data.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+        }
+    }
+    public class MyOwnMySqlMigrationSqlGenerator : MySqlMigrationSqlGenerator
+    {
+        protected override MigrationStatement Generate(AddForeignKeyOperation addForeignKeyOperation)
+        {
+            addForeignKeyOperation.PrincipalTable = addForeignKeyOperation.PrincipalTable.Replace("dbo.", "");
+            addForeignKeyOperation.DependentTable = addForeignKeyOperation.DependentTable.Replace("dbo.", "");
+            MigrationStatement ms = base.Generate(addForeignKeyOperation);
+            return ms;
         }
     }
 }

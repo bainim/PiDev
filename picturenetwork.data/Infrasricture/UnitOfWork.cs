@@ -38,10 +38,34 @@ namespace picturenetwork.data.Infrasricture
         {
             get { return commentRepository = new CommentRepository(dbFactory); }
         }
+
+
+        private IPhotoRepository photoRepository;
+        public IPhotoRepository PhotoRepository
+        {
+            get { return photoRepository = new PhotoRepository(dbFactory); }
+        }
+
+        private IClaimRepository claimRepository;
+        public IClaimRepository ClaimRepository
+        {
+            get { return claimRepository = new ClaimRepository(dbFactory); }
+        }
+        private IEventRepository eventRepository;
+        public IEventRepository EventRepository 
+        {
+            get { return eventRepository = new EventRepository(dbFactory); }
+        }
+
+
+
         public void Dispose()
         {
             dbFactory.Dispose();
         }
+
+
+        
     }
     
 }

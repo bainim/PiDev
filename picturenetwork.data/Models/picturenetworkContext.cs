@@ -36,6 +36,11 @@ namespace picturenetwork.data.Models
             modelBuilder.Configurations.Add(new t_photoMap());
             modelBuilder.Configurations.Add(new t_subjectMap());
             modelBuilder.Configurations.Add(new t_userMap());
+
+            modelBuilder.Conventions
+        .Remove <System.Data.Entity.ModelConfiguration.Conventions.TableAttributeConvention>();
+
+            modelBuilder.Conventions.Remove<System.Data.Entity.Infrastructure.IncludeMetadataConvention>();
         }
     }
 }

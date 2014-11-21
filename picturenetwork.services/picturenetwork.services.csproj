@@ -39,8 +39,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClaimService.cs" />
+    <Compile Include="EventService.cs" />
     <Compile Include="ForumService.cs" />
+    <Compile Include="IClaimService.cs" />
+    <Compile Include="IEventService.cs" />
     <Compile Include="IForumService.cs" />
+    <Compile Include="IPhotoService.cs" />
+    <Compile Include="PhotoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -52,6 +58,9 @@
       <Project>{87bcfc7a-2251-44ec-8188-f57dea83f2ca}</Project>
       <Name>picturenetwork.domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
