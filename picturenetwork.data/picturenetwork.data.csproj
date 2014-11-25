@@ -70,6 +70,7 @@
     <Compile Include="Infrasricture\RepositoryBase.cs" />
     <Compile Include="Infrasricture\SubjectRepository.cs" />
     <Compile Include="Infrasricture\UnitOfWork.cs" />
+    <Compile Include="Infrasricture\UserRepository.cs" />
     <Compile Include="Migrations\201411131957277_InitialSchema.cs" />
     <Compile Include="Migrations\201411131957277_InitialSchema.Designer.cs">
       <DependentUpon>201411131957277_InitialSchema.cs</DependentUpon>

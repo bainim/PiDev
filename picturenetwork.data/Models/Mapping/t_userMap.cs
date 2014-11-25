@@ -17,34 +17,34 @@ namespace picturenetwork.data.Models.Mapping
                 .HasMaxLength(31);
 
             this.Property(t => t.age)
-                .HasMaxLength(255);
+                .HasMaxLength(10);
 
             this.Property(t => t.birthday)
                 .HasMaxLength(255);
 
             this.Property(t => t.country)
-                .HasMaxLength(255);
+                .HasMaxLength(50);
 
             this.Property(t => t.description)
-                .HasMaxLength(255);
+                .HasMaxLength(255).IsOptional();
 
             this.Property(t => t.fname)
-                .HasMaxLength(255);
+                .HasMaxLength(50);
 
             this.Property(t => t.gender)
-                .HasMaxLength(255);
+                .HasMaxLength(50);
 
             this.Property(t => t.grade)
-                .HasMaxLength(255);
+                .HasMaxLength(50);
 
             this.Property(t => t.lname)
-                .HasMaxLength(255);
+                .HasMaxLength(50);
 
             this.Property(t => t.login)
-                .HasMaxLength(255);
+                .HasMaxLength(50).IsRequired();
 
             this.Property(t => t.password)
-                .HasMaxLength(255);
+                .HasMaxLength(50).IsRequired();
 
             this.Property(t => t.type)
                 .HasMaxLength(255);
